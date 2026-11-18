@@ -4,45 +4,39 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
 
 @Entity 
 public class Movie {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @NotBlank(message = "Title is a required field")
-    @Size(max = 100, message = "Title cannot exceed 100 characters")
     private String title;
-
-    @NotBlank(message = "Director is a required field")
     private String director;
-
-    @NotBlank(message = "Genre is a required field")
     private String genre;
-
-    @Min(value = 1888, message = "Release year cannot be lower than 1888")
-    @Max(value = 2030, message = "Release year cannot exceed 2030")
     private Integer releaseYear;
-
-    @DecimalMin(value = "0.0", message = "Minimum rating is 0.0")
-    @DecimalMax(value = "10.0", message = "Maximum rating is 10.0")
     private Double rating;
-
-    @Positive(message = "Runtime minutes cannot be a negative value")
     private Integer runtimeMinutes;
-
     private Boolean available;
 
     //Constructors
     public Movie() {}
+    public Movie(
+        String title, 
+        String director, 
+        String genre, 
+        Integer releaseYear, 
+        Double rating, 
+        Integer runtimeMinutes, 
+        Boolean available
+    ) {
+        this.title = title;
+        this.director = director;
+        this.genre = genre;
+        this.releaseYear = releaseYear;
+        this.rating = rating;
+        this.runtimeMinutes = runtimeMinutes;
+        this.available = available;
+    }
 
     //Getters
     public Long getId() { return id; }

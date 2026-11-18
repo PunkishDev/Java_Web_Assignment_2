@@ -2,16 +2,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title th:text="${title} + ' &bull; yo mamas movies'">Library</title>
-  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 </head>
 
-<header th:fragment="header(title, previous_page)">
+<header class="py-4" th:fragment="header(title, previous_page)">
   <h1 th:text="${title} + ' &bull; yo mamas movies'"></h1>
-  <nav>
-    <a th:unless="${#strings.isEmpty(previous_page)}" th:href="@{previous_page}"
-      >Back</a
+  <nav class="nav nav-tabs">
+    <a
+      class="nav-link"
+      th:unless="${#strings.isEmpty(previous_page)}"
+      th:href="@{{page} (page = ${previous_page})}"
     >
-    <a th:href=""></a>
-    <a th:href="@{/movies/new}">Add a movie</a>
+      Back
+    </a>
+    <a
+      class="nav-link"
+      th:unless="${#strings.isEmpty(previous_page)}"
+      th:href="@{/movies}"
+    >
+      Home
+    </a>
+    <a class="nav-link" th:href="@{/movies/new}">Add a movie</a>
   </nav>
 </header>

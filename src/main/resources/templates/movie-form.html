@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head th:replace="~{fragments :: head('New Movie')}"></head>
+  <body>
+    <header
+      th:replace="~{fragments :: header('New Movie', '/movies')}"
+    ></header>
+    <form
+      class="grid grid-cols-1 gap-5"
+      th:action="@{/movies/new}"
+      method="post"
+      th:object="${movie}"
+    >
+      <div class="form-field">
+        <label class="form-label" for="title">Title: </label>
+        <input
+          class="form-control"
+          type="text"
+          th:field="*{title}"
+          th:errorclass="invalid"
+        />
+        <p
+          class="error"
+          th:if="${#fields.hasErrors('title')}"
+          th:errors="*{title}"
+        ></p>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="director">Director: </label>
+        <input
+          class="form-control"
+          type="text"
+          th:field="*{director}"
+          th:errorclass="invalid"
+        />
+        <p
+          class="error"
+          th:if="${#fields.hasErrors('director')}"
+          th:errors="*{director}"
+        ></p>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="genre">Genre: </label>
+        <input
+          class="form-control"
+          type="text"
+          th:field="*{genre}"
+          th:errorclass="invalid"
+        />
+        <p
+          class="error"
+          th:if="${#fields.hasErrors('genre')}"
+          th:errors="*{genre}"
+        ></p>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="releaseYear">Release Year: </label>
+        <input
+          class="form-control"
+          type="number"
+          th:field="*{releaseYear}"
+          th:errorclass="invalid"
+        />
+        <p
+          class="error"
+          th:if="${#fields.hasErrors('releaseYear')}"
+          th:errors="*{releaseYear}"
+        ></p>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="rating">Rating: </label>
+        <input
+          class="form-control"
+          type="number"
+          th:field="*{rating}"
+          th:errorclass="invalid"
+          step="0.1"
+        />
+        <p
+          class="error"
+          th:if="${#fields.hasErrors('rating')}"
+          th:errors="*{rating}"
+        ></p>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="runtimeMinutes">Runtime Minutes: </label>
+        <input
+          class="form-control"
+          type="number"
+          th:field="*{runtimeMinutes}"
+          th:errorclass="invalid"
+        />
+        <p
+          class="error"
+          th:if="${#fields.hasErrors('runtimeMinutes')}"
+          th:errors="*{runtimeMinutes}"
+        ></p>
+      </div>
+      <div class="form-field">
+        <div class="switch">
+          <input
+            type="checkbox"
+            switch
+            role="switch"
+            th:field="*{available}"
+            th:errorclass="invalid"
+          />
+        </div>
+        <label class="form-label" for="available">Available</label>
+        <p
+          class="error"
+          th:if="${#fields.hasErrors('available')}"
+          th:errors="*{available}"
+        ></p>
+      </div>
+      <button class="btn-solid theme-success" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
