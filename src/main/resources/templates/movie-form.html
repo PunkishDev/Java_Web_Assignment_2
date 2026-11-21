@@ -7,7 +7,7 @@
     ></header>
     <form
       class="grid grid-cols-1 gap-5"
-      th:action="@{/movies/new}"
+      th:action="${movieId == null} ? @{/movies} : @{/movies/{id}(id=${movieId})}"
       method="post"
       th:object="${movie}"
     >

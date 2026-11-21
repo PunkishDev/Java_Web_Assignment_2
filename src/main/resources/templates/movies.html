@@ -3,39 +3,48 @@
   <head th:replace="~{fragments :: head('Movies')}"> </head>
   <body>
     <header th:replace="~{fragments :: header('Catalog', '')}"></header>
-    <table
-      class="table table-striped theme-inverse"
-      th:unless="${movies.isEmpty()}"
-    >
-      <thead>
-        <th scope="col">Title</th>
-        <th scope="col">Director</th>
-        <th scope="col">Genre</th>
-        <th scope="col">Year</th>
-        <th scope="col">Rating</th>
-        <th scope="col">Runtime</th>
-        <th scope="col">Available</th>
-        <th scope="col" colspan="2"></th>
-      </thead>
-      <tbody>
-        <tr th:each="m : ${movies}">
-          <td th:text="${m.title}"></td>
-          <td th:text="${m.director}"></td>
-          <td th:text="${m.genre}"></td>
-          <td th:text="${m.releaseYear}"></td>
-          <td th:text="${m.rating}"></td>
-          <td th:text="${m.runtimeMinutes}"></td>
-          <td th:text="${m.available}"></td>
-          <td>
-            <a th:href="@{/movies/{id}/edit (id=${m.id})}">Edit</a>
-          </td>
-          <td>
-            <a th:href="@{/movies/{id}/delete (id=${m.id})}">Delete</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="d-flex justify-content-center">
+      <table
+        class="table table-striped theme-inverse"
+        th:unless="${movies.isEmpty()}"
+      >
+        <thead>
+          <th scope="col">Title</th>
+          <th scope="col">Director</th>
+          <th scope="col">Genre</th>
+          <th scope="col">Year</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Runtime</th>
+          <th scope="col">Available</th>
+          <th scope="col" colspan="2"></th>
+        </thead>
+        <tbody>
+          <tr th:each="m : ${movies}">
+            <td th:text="${m.title}"></td>
+            <td th:text="${m.director}"></td>
+            <td th:text="${m.genre}"></td>
+            <td th:text="${m.releaseYear}"></td>
+            <td th:text="${m.rating}"></td>
+            <td th:text="${m.runtimeMinutes}"></td>
+            <td th:text="${m.available}"></td>
+            <td>
+              <a th:href="@{/movies/{id}/edit (id=${m.id})}">Edit</a>
+            </td>
+            <td>
+              <a th:href="@{/movies/{id} (id=${m.id})}">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-    <p th:if="${movies.isEmpty()}">Never gonna give you up...</p>
+      <div class="bg-body" th:if="${movies.isEmpty()}">
+        <iframe
+          width="720px"
+          height="405px"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?playlist=dQw4w9WgXcQ&loop=1&autoplay=1&controls=0"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
   </body>
 </html>

@@ -10,6 +10,8 @@ import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
 public class MovieForm {
+    
+
     @NotBlank(message = "Title is a required field")
     @Size(max = 100, message = "Title cannot exceed 100 characters")
     private String title;

@@ -1,3 +1,21 @@
 INSERT INTO movie (title, director, genre, release_year, rating, runtime_minutes, available) 
 VALUES ('Coraline', 'Henry Selick', 'Thriller', 2009, 10.0, 120, TRUE),
-        ('Avatar', 'James Cameron', 'Action', 2009, 10.0, 150, TRUE);
+        ('Avatar', 'James Cameron', 'Action', 2009, 9.5, 150, TRUE),
+        ('Avatar The Way of Water', 'James Cameron', 'Action', 2023, 10.0, 180, FALSE),
+        ('Avatar Fire and Ash', 'James Cameron', 'Action', 2025, 8, 180, TRUE),
+        ('Avatar: The Last Airbender', 'Lauren Montgomery', 'Drama', 2026, 6.8, 120, FALSE),
+        ('Warm Bodies', 'Jonathan Levine', 'Romcom', 2013, 7.4, 90, TRUE),
+        ('A Minecraft Movie', 'Jared Hess', 'Comedy', 2025, 6.4, 100, FALSE),
+        ('Titanic', 'James Cameron', 'Romance', 1997, 7, 180, FALSE),
+        ('Twilight', 'Catherine Hardwicke', 'Romance', 2008, 10, 120, TRUE),
+        ('The Twilight Saga: New Moon', 'Chris Weitz', 'Romance', 2009, 10, 120, TRUE),
+        ('The Twilight Saga: Eclipse', 'David Slade', 'Romance', 2010, 10, 120, TRUE),
+        ('The Twilight Saga: Breaking Dawn: Part 1', 'Bill Condon', 'Romance', 2011, 10, 110, TRUE),
+        ('The Twilight Saga: Breaking Dawn: Part 2', 'Bill Condon', 'Romance', 2012, 10, 110, TRUE),
+        ('Bird Box', 'Susanne Bier', 'Horror', 2018, 9, 120, FALSE),
+        ('Weapons', 'Zach Cregger', 'Thriller', 2025, 9.6, 120, TRUE),
+        ('Obsession', 'Curry Barker', 'Horror', 2026, 9.7, 120, TRUE),
+        ('Run', 'Aneesh Chaganty', 'Psychological Horror', 2021, 9.8, 90, FALSE),
+        ('Beetlejuice', 'Tim Burton', 'Thriller', 1988, 10.0, 90, TRUE),
+        ('The Nightmare Before Christmas', 'Tim Burton', 'Children', 1990, 8.9, 90, FALSE),
+        ('IT', 'Tommy Lee Wallace', 'Children', 1990, 7.8, 120, TRUE);
